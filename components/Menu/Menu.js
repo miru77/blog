@@ -21,9 +21,9 @@ export default function Menu({menuColor}) {
           </Link>
         </li>
         <li>
-        <Link href="/editar">
+        <Link href="/crear">
                 <a>
-                   Editar
+                 Crear
                 </a>
           </Link>
         </li>
