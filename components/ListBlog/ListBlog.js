@@ -27,7 +27,7 @@ export default function ListBlog({blogs}) {
         <Row>
           {blogs.map((proyect, index) => (
            
-            <Col key={index} xs={12} sm={4} className="proyect">
+            <Col key={index} xs={12} sm={6} className="proyect">
                 <Info proyect={proyect}/>
             </Col>
           ))}
