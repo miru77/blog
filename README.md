@@ -1,16 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+## AppWeb para el  CHALLENGE de Blog
+
+Los datos válidos para el login son:      
+email: challenge@alkemy.org       
+password: react       
+
+## Instalar la App
+
+Primero agregar los paquetes con:
+```bash
+npm install
+# o
+yarn install
+```
+
+Segundo, ejecutar el servidor de desarrollo:
 
 ```bash
 npm run dev
-# or
+# o
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Y finalmente: 
+Abrir [http://localhost:3000](http://localhost:3000) con su navegador para ver el resultado.
+
+
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
