@@ -25,7 +25,7 @@ export default function Blog() {
                 }
         })()
       }, [])
-      console.log(blogs)
+      
 
     return (
         <>

@@ -5,6 +5,9 @@ import useWindowSize from "../../hooks/useWindowSize"
 import {breakpointUpLg, breakpointUpMd, breakpointUpSm} from "../../utils/breakpoint"
 import { Container, Row, Col, Card, Button , ButtonGroup} from "react-bootstrap"
 import DetalleModal from '../Modal/DetalleModal/DetalleModal'
+import {DeleteBlogId} from "../../api/blog"
+import {toast} from "react-toastify"
+import {useRouter} from "next/router"
 
 
 
@@ -37,9 +40,18 @@ export default function ListBlog({blogs}) {
 
 
 function Info({proyect}) {
-  const [modalShow, setModalShow] = useState(false);
 
-  
+  const [modalShow, setModalShow] = useState(false);
+  const router = useRouter()
+
+  const DeleteBlogIdfunc = (id) => {
+    DeleteBlogId(id)
+    toast.info(` Eliminado el blog id: ${id}`)
+    console.log(id)
+ 
+  }
+
+ 
   
     return (
         <>
@@ -59,8 +71,9 @@ function Info({proyect}) {
 
                           
                             <Button variant="secondary" className="outline" onClick={() => setModalShow(true)}>Detalles</Button>
-                            <Button variant="secondary">Editar</Button>
-                            <Button variant="danger">Eliminar</Button>
+                            <Button variant="secondary" onClick={() => router.push(`/editar?query=${proyect.id}`)}>Editar</Button>
+                            
+                            <Button variant="danger" onClick={() => DeleteBlogIdfunc(proyect.id)}>Eliminar</Button>
                         </ButtonGroup>
         
                     </div>

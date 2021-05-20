@@ -21,19 +21,13 @@ export default function Menu({menuColor}) {
           </Link>
         </li>
         <li>
-        <Link href="/">
+        <Link href="/editar">
                 <a>
-                    Home
+                   Editar
                 </a>
           </Link>
         </li>
-        <li>
-        <Link href="/">
-                <a>
-                    Home
-                </a>
-          </Link>
-        </li>
+      
       </ul>
     </Container>
   </header>
