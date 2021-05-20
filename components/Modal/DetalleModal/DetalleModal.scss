@@ -1,0 +1,53 @@
+.basic-modal {
+  .header {
+    background-color: $primary !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+
+    .close {
+      background-color: $primary;
+      border-color: $primary;
+    }
+
+    span,
+    i {
+      color: $font-light;
+    }
+
+    i {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      font-size: 25px;
+      margin: 0;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.header-game {
+  &.ui.grid {
+    margin: 0;
+  }
+
+  &__title {
+    position: relative;
+    background-color: $background-dark-absolute;
+    padding: 10px 0;
+    color: $font-light;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  &__delivery {
+    text-align: center;
+    color: $primary;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 0;
+  }
+}
