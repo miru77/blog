@@ -70,10 +70,10 @@ function Info({proyect}) {
                         <ButtonGroup aria-label="Basic example"  className="mb-2">
 
                           
-                            <Button variant="secondary" className="outline" onClick={() => setModalShow(true)}>Detalles</Button>
-                            <Button variant="secondary" onClick={() => router.push(`/editar?query=${proyect.id}`)}>Editar</Button>
+                            <Button variant="outline-primary" className="outline" onClick={() => setModalShow(true)}>Detalles</Button>
+                            <Button variant="outline-secondary" onClick={() => router.push(`/editar?query=${proyect.id}`)}>Editar</Button>
                             
-                            <Button variant="danger" onClick={() => DeleteBlogIdfunc(proyect.id)}>Eliminar</Button>
+                            <Button variant="outline-danger" onClick={() => DeleteBlogIdfunc(proyect.id)}>Eliminar</Button>
                         </ButtonGroup>
         
                     </div>

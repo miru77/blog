@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import {Button, Form} from "react-bootstrap"
-//import {Form, Button} from "semantic-ui-react"
 import {useFormik} from 'formik';
 import * as Yup from 'yup'
 import {toast} from "react-toastify"
@@ -48,6 +47,7 @@ export default function LoginForm({ onHide}) {
                 onChange= {formik.handleChange}
                 isInvalid= {!!formik.errors.email}
            />
+           
             <Form.Control 
                 name="password"
                 type="password"
@@ -56,6 +56,10 @@ export default function LoginForm({ onHide}) {
                 isInvalid= {!!formik.errors.password}
            
            />
+        
+           {formik.errors.email&& ( <div className = "mensaje">{formik.errors.email} </div>)}
+        
+           {formik.errors.password && (  <div className = "mensaje"> {formik.errors.password}</div> )}
 
            <div className="actions">
               
@@ -78,9 +82,7 @@ function initialValues() {
 function validationSchema() {
     return {
         email: Yup.string().email(true).required("El correo es obligatorio"),
-        password: Yup.string().required("El password es obligatorio")
+        password: Yup.string().required("La contraseña es obligatorio")
     }
 }
 
-
-//    <Button onClick={onHide}>Close</Button>
