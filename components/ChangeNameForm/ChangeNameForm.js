@@ -19,9 +19,10 @@ export default function ChangeNameForm({blog, logout}) {
         initialValues: initialValues(blog.title, blog.body),
         validationSchema: Yup.object(validationSchema()),
         onSubmit: async (formData) => {
-            toast.info("Titulo y detalle actializado")
+            
             const response = await updateNameApi(blog.id, formData, logout)
-            console.log(formData)
+            toast.info("Titulo y detalle actualizado")
+            console.log(response)
            
         }
      
@@ -42,8 +43,12 @@ export default function ChangeNameForm({blog, logout}) {
                     onChange={formik.handleChange} value={formik.values.lastname}
                     isInvalid= {!!formik.errors.lastname}    
                     />
+
+                    {formik.errors.name&& ( <div className = "mensaje">{formik.errors.name} </div>)}
+        
+                    {formik.errors.lastname && (  <div className = "mensaje"> {formik.errors.lastname}</div> )}
                
-                <Button className="submit">Actualizar</Button>
+                <Button className="submit" type="submit">Actualizar</Button>
             </Form>
             
         </div>
@@ -61,7 +66,7 @@ function initialValues(name, lastname) {
 
 function validationSchema() {
     return {
-        name: Yup.string().required(true),
-        lastname: Yup.string().required(true)
+        name: Yup.string().required("El titulo es obligatorio"),
+        lastname: Yup.string().required("El detalle es obligatorio")
     }
 }

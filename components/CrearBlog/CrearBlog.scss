@@ -16,6 +16,13 @@
   > form {
     text-align: center;
 
+    .mensaje {
+      color: #f54021;
+      margin: 0 !important;
+      padding: 0 !important;
+      text-align: start;
+    }
+
     .submit {
       padding: 12px 60px;
     }
