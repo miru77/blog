@@ -6,6 +6,8 @@ import * as Yup from 'yup'
 import {toast} from "react-toastify"
 import useAuth from "../../hooks/useAuth"
 import {updateNameApi} from "../../api/blog"
+import {useRouter} from "next/router"
+
 
 
 
@@ -13,7 +15,9 @@ import {updateNameApi} from "../../api/blog"
 
 export default function ChangeNameForm({blog, logout}) {
 
-   
+    const router = useRouter()
+    
+
 
     const formik = useFormik({
         initialValues: initialValues(blog.title, blog.body),
@@ -23,6 +27,7 @@ export default function ChangeNameForm({blog, logout}) {
             const response = await updateNameApi(blog.id, formData, logout)
             toast.info("Titulo y detalle actualizado")
             console.log(response)
+            router.push("/")
            
         }
      

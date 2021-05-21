@@ -6,6 +6,8 @@ import * as Yup from 'yup'
 import {toast} from "react-toastify"
 import useAuth from "../../hooks/useAuth"
 import {crearBlog} from "../../api/blog"
+import {useRouter} from "next/router"
+
 
 
 
@@ -13,6 +15,7 @@ import {crearBlog} from "../../api/blog"
 
 export default function CrearBlog({logout}) {
 
+    const router = useRouter()
    
 
     const formik = useFormik({
@@ -22,6 +25,7 @@ export default function CrearBlog({logout}) {
             const response = await crearBlog(formData)
             toast.info("Titulo y detalle creado")
             console.log(response)
+            router.push("/")
            
         }
      
